@@ -1,0 +1,18 @@
+{
+  "name": "app",
+  "homepage": "https://github.com/thibault33170/Simple-Testing-Angular-Project",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-mocks": "^1.5.9"
+  }
+}
