@@ -1,3 +1,5 @@
+//the 'describe' can contain one are many 'it'
+//they can also contain others 'describe' for more readable test suites
 describe('Testing angular js test suite for the unique App of the app', function() {
 
     //Load the module tha we need.
@@ -20,6 +22,8 @@ describe('Testing angular js test suite for the unique App of the app', function
         });
 
         it('should add new user in the users list', function() {
+
+            //The users list in empty at begining
             expect(scope.users).toBeDefined();
             expect(scope.users.length).toEqual(0);
 
@@ -29,12 +33,27 @@ describe('Testing angular js test suite for the unique App of the app', function
                 country:'Espagne'
             };
 
+            //Adding one user to the users list
             scope.addUser();
 
+            //Then it should be one user in the users list
             expect(scope.users.length).toBe(1);
             expect(scope.users[0].name).toBe('toto');
             expect(scope.users[0].age).toBe('80');
             expect(scope.users[0].country).toBe('Espagne');
+
+            scope.newUser = {
+                name : undefined,
+                age: undefined,
+                country: undefined
+            };
+
+            //Adding a second user in the users list
+            scope.addUser();
+
+            //If all fields aren't valid, we don't add the user to the users list
+            //then it should be only one user in the users list
+            expect(scope.users.length).toBe(1);         
         });
 
         it('shoud remove user in the users list', function() {
@@ -63,7 +82,7 @@ describe('Testing angular js test suite for the unique App of the app', function
             scope.removeUser(scope.users[0]);
 
             expect(scope.users.length).toBe(1);
-            
+
             expect(scope.users[0].name).toBe('titi');
             expect(scope.users[0].age).toBe('20');
             expect(scope.users[0].country).toBe('USA');

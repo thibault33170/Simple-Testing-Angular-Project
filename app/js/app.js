@@ -13,12 +13,13 @@ testingAngularApp.controller('testingAngularCtrl', function($rootScope, $scope) 
     };
 
     $scope.addUser = function(){
-        
-        $scope.users.push({
-            name : $scope.newUser.name,
-            age: $scope.newUser.age,
-            country: $scope.newUser.country
-        });
+        if($scope.newUser.name != undefined && $scope.newUser.age != undefined && $scope.newUser.country != undefined){
+            $scope.users.push({
+                name : $scope.newUser.name,
+                age: $scope.newUser.age,
+                country: $scope.newUser.country
+            });
+        }
     };
 
     $scope.removeUser = function(user){
