@@ -10,22 +10,24 @@ Now you can begin !
 
 # Install needed packages
 
+At first, we will need to use bower. Then we will install it with npm. We just have to run this : 
 ```
-    1. run npm install bower -g. It will install bower globaly.
-```
-
-```
-    2. Go to the project folder
+ npm install bower -g.
 ```
 
+As we said, we will use the phantomJs, karma and the framework jasmine in order to run our tests. 
+Go to the project folder and run this :
 ```
-    3. run npm install. It will install karma, jasmine and phantomJs package
-```
-
-```
-    4. go to the app folder and run bower install. It will install angular, angular mcks.
+    npm install
 ```
 
+Obviously, if we wont to test an AngularJs application, we will need to install it. And for write the test, we will use angular-mocks.
+Just run this :
 ```
-    5. go to the /app/js/test and run karma start karma.conf.js
+    bower install.
+```
+
+Now we have all the elements for run our tests ! We just need to tell to karma to start ! Like this :
+```
+    karma start karma.conf.js
 ```
