@@ -13,7 +13,7 @@ testingAngularApp.controller('testingAngularCtrl', function($rootScope, $scope) 
     };
 
     $scope.addUser = function(){
-        if($scope.newUser.name != undefined && $scope.newUser.age != undefined && $scope.newUser.country != undefined){
+        if( $scope.newUser && $scope.newUser.name != undefined && $scope.newUser.age != undefined && $scope.newUser.country != undefined){
             $scope.users.push({
                 name : $scope.newUser.name,
                 age: $scope.newUser.age,

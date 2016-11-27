@@ -21,12 +21,13 @@ describe('Testing angular js test suite for the unique App of the app', function
             expect(scope.title).toBe('Title of my page');
         });
 
-        it('should add new user in the users list', function() {
+        it('should add new user in the users list if all the user attributes are set', function() {
 
             //The users list in empty at begining
             expect(scope.users).toBeDefined();
             expect(scope.users.length).toEqual(0);
 
+            //all attributes are set, this should work
             scope.newUser = {
                 name :'toto',
                 age:'80',
@@ -42,6 +43,7 @@ describe('Testing angular js test suite for the unique App of the app', function
             expect(scope.users[0].age).toBe('80');
             expect(scope.users[0].country).toBe('Espagne');
 
+            //all attributes are not set, this should not work
             scope.newUser = {
                 name : undefined,
                 age: undefined,
@@ -53,11 +55,54 @@ describe('Testing angular js test suite for the unique App of the app', function
 
             //If all fields aren't valid, we don't add the user to the users list
             //then it should be only one user in the users list
-            expect(scope.users.length).toBe(1);         
+            expect(scope.users.length).toBe(1);
+
+            //all attributes are not set, this should not work
+            scope.newUser = {
+                name : 'user',
+                age: undefined,
+                country: undefined
+            };
+
+            //Trying to add this user. This should not work because all the attributes of the user are not set.
+            scope.addUser();
+
+            //If all fields aren't valid, we don't add the user to the users list
+            //then it should be only one user in the users list
+            expect(scope.users.length).toBe(1);
+
+            //all attributes are not set, this should not work
+            scope.newUser = {
+                name : undefined,
+                age: '50',
+                country: undefined
+            };
+
+            //Trying to add this user. This should not work because all the attributes of the user are not set.
+            scope.addUser();
+
+            //If all fields aren't valid, we don't add the user to the users list
+            //then it should be only one user in the users list
+            expect(scope.users.length).toBe(1);
+
+            //all attributes are not set, this should not work
+            scope.newUser = {
+                name : undefined,
+                age: undefined,
+                country: 'France'
+            };
+
+            //Trying to add this user. This should not work because all the attributes of the user are not set.
+            scope.addUser();
+
+            //If all fields aren't valid, we don't add the user to the users list
+            //then it should be only one user in the users list
+            expect(scope.users.length).toBe(1);
         });
 
         it('shoud remove user in the users list', function() {
             
+            //all attributes are set, this should work
             scope.newUser = {
                 name :'toto',
                 age:'80',
@@ -67,6 +112,7 @@ describe('Testing angular js test suite for the unique App of the app', function
             //Add one user to the users List
             scope.addUser();
 
+            //all attributes are set, this should work
             scope.newUser = {
                 name :'titi',
                 age:'20',
