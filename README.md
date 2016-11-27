@@ -1,5 +1,17 @@
 # Simple-Testing-Angular-Project
+
 Using Jasmine / Karma / PhantomJs for learn how to test a simple AngularJs app.
+
+# The application
+
+The application is really simple.
+
+- There is only one js file witch is app.js.
+- There is the index.html file witch will display the app. She's really basic.
+
+- There is the testingAngularUnitTest.js file witch contain the test suites of the app.
+
+- And there is the karma.conf.js file. This file is a config file for karma.
 
 # Prerequises
 
@@ -24,7 +36,7 @@ Go to the project folder and run this :
 Obviously, if we wont to test an AngularJs application, we will need to install it. And for write the test, we will use angular-mocks.
 Just run this :
 ```
-    bower install.
+    bower install
 ```
 
 Now we have all the elements for run our tests ! We just need to tell to karma to start ! Like this :
