@@ -6,10 +6,10 @@ Using Jasmine / Karma / PhantomJs for learn how to test a simple AngularJs app.
 
 The application is really simple.
 
-- There is only one js file witch is app.js.
-- There is the index.html file witch will display the app. She's really basic.
+- There is only one js file whitch is app.js.
+- There is the index.html file whitch will display the app. She's really basic.
 
-- There is the testingAngularUnitTest.js file witch contain the test suites of the app.
+- There is the testingAngularUnitTest.js file whitch contain the test suites of the app.
 
 - And there is the karma.conf.js file. This file is a config file for karma.
 
@@ -25,6 +25,11 @@ Now you can begin !
 At first, we will need to use bower. Then we will install it with npm. We just have to run this : 
 ```
  npm install bower -g.
+```
+
+Now we will need to use the karma command line interface and phantomJs so we will run this :
+```
+ npm install karma-cli phantomjs -g
 ```
 
 As we said, we will use the phantomJs, karma and the framework jasmine in order to run our tests. 
